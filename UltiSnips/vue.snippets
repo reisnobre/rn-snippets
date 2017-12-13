@@ -15,5 +15,11 @@ export default{
 endsnippet
 
 snippet rnimport:c
-	import $1 from './components/{}.vue'.format($1.capitalize())
+	import $1 from './components/$1.vue'
+endsnippet
+
+snippet dc "create" b
+def create
+  @$1 = `!p snip.rv = t[1].title()`.new
+  end
 endsnippet
