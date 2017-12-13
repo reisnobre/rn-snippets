@@ -12,16 +12,16 @@ snippet transition
   <transition></transition>
 endsnippet
 
-snippet rnbase
+snippet rnbase "Component base"
 <template>
-	<div class="" id="${$1}">
+	<div class="" id="${1:''}">
 
   </div>
 </template>
 
 <script>
 export default{
-  name: ''
+  name: '${1:''}'
 
   }
 </script>
