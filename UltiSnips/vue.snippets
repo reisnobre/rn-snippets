@@ -15,7 +15,7 @@ export default{
 endsnippet
 
 snippet rnrouter:l "Router Link"
-<router-link :to="{ name: '$1' }" tag="${2:a}" :query="{ $3 }" params="{ $4 }">$5</router-link>
+<router-link :to="{ name: '$1', query: { $2 }, params: { $3 } }" tag="${4:a}">$5</router-link>
 endsnippet
 
 snippet rnimport:c
