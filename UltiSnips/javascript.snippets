@@ -7,3 +7,25 @@ setTimeout(() => {
 	$0
 }, 300)
 endsnippet
+
+snippet rnrouter:c "Router File" b
+import Vue from 'vue'
+import Router from 'vue-router'
+Vue.use(Router)
+
+import $0 from `!p snip.rv = t[1].lower()`
+
+export default new Router({
+	mode: 'history',
+  base: process.env.NODE_ENV === 'production' ? '/' : '/',
+  routes: [
+    {
+      path: '',
+      name: '`!p snip.rv = t[0].lower()`',
+      component: $0
+    }
+  ]
+})
+
+
+endsnippet
