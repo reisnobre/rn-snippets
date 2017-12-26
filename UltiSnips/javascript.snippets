@@ -26,6 +26,45 @@ export default new Router({
     }
   ]
 })
+endsnippet
 
+snippet rnstore:c "Store File" b
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
+const debug = process.env.NODE_ENV !== 'production'
+import $0 from './stores/$0' 
+
+export default new Vuex.store({
+  strict: debug,
+  modules: {
+    $0
+  }
+})
+endsnippet
+
+snippet rnstore:i "Store item" b
+const state = {
+  state: value
+}
+
+const getters = {
+  state: () => state.state
+}
+const mutations = {
+  SET_STATE (state, value) {
+  state.state = value
+  }
+}
+
+const actions = {
+  setState ({ commit }, value) {
+    commit('SET_STATE', value)
+  }
+}
+
+export default {
+  state, getters, mutations, actions
+}
 endsnippet
