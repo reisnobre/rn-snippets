@@ -1,10 +1,10 @@
 extends html, javascript, css, scss 
 
-snippet rnbase "Component base" b
+snippet rncreate:component "Component base" b
 <template>
-	<div class="" id="$1">
+	<div class="$0" id="$1">
 
-  </div>
+	</div>
 </template>
 
 <script>
@@ -14,12 +14,8 @@ export default{
 </script>
 endsnippet
 
-snippet rnrouter:l "Router Link"
+snippet rncreate:router:l "Router Link"
 <router-link :to="{ name: '$1', query: { $2 }, params: { $3 } }" tag="${4:a}">$5</router-link>
-endsnippet
-
-snippet rnimport:c
-	import $1 from './components/$1.vue'
 endsnippet
 
 snippet dc "create" b

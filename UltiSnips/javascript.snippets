@@ -1,4 +1,4 @@
-snippet log "console.log(...)" b
+snippet rnlog "console.log(...)" b
 console.log($0)
 endsnippet
 
@@ -8,7 +8,7 @@ setTimeout(() => {
 }, 300)
 endsnippet
 
-snippet rnrouter:c "Router File" b
+snippet rncreate:router "Router File" b
 import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
@@ -28,7 +28,7 @@ export default new Router({
 })
 endsnippet
 
-snippet rnstore:c "Store File" b
+snippet rncreate:store "Store File" b
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -44,7 +44,7 @@ export default new Vuex.store({
 })
 endsnippet
 
-snippet rnstore:i "Store item" b
+snippet rncreate:store:i "Store item" b
 const state = {
   state: 'value'
 }
