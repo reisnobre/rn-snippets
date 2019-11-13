@@ -1,6 +1,6 @@
 extends html, javascript, css, scss 
 
-snippet rncreate:page "Create page" b
+snippet rnc:page "Create page" b
 <template>
 	<main class="$0" id="$1">
 
@@ -14,10 +14,9 @@ export default {
 </script>
 endsnippet
 
-snippet rncreate:component "Component base" b
+snippet rnc:component "Component base" b
 <template>
 	<div class="$0" id="$1">
-
 	</div>
 </template>
 
@@ -28,12 +27,12 @@ export default {
 </script>
 endsnippet
 
-snippet rncreate:router:l "Router Link"
-<router-link :to="{ name: '$1', query: { $2 }, params: { $3 } }" tag="${4:a}">$5</router-link>
+snippet rnc:router:view "Router Link"
+<transition name="fade" mode="out-in">
+	<router-view/>
+</transition>
 endsnippet
 
-snippet dc "create" b
-def create
-  @$1 = `!p snip.rv = t[1].title()`.new
-  end
+snippet rnc:router:link "Router Link"
+<router-link :to="{ name: '$1', query: { $2 }, params: { $3 } }" tag="${4:a}">$5</router-link>
 endsnippet
