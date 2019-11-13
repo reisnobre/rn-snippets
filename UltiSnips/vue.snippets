@@ -14,7 +14,7 @@ export default {
 </script>
 endsnippet
 
-snippet rnc:component "Component base" b
+snippet rnc:component "Create Component base" b
 <template>
 	<div class="$0" id="$1">
 	</div>
@@ -27,12 +27,16 @@ export default {
 </script>
 endsnippet
 
-snippet rnc:router:view "Router Link"
+snippet rnc:router:view "Create Router view"
 <transition name="fade" mode="out-in">
 	<router-view/>
 </transition>
 endsnippet
 
-snippet rnc:router:link "Router Link"
+snippet rnc:router:link "Create Router Link"
 <router-link :to="{ name: '$1', query: { $2 }, params: { $3 } }" tag="${4:a}">$5</router-link>
+endsnippet
+
+snippet rni:store:module "Import Store module"
+import $1 from './stores/$1'
 endsnippet
