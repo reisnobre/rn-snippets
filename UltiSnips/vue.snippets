@@ -70,3 +70,19 @@ snippet rnc:b:table "Create a bulma table"
 		}
 	}
 endsnippet
+
+snippet rnc:b:input "Create a bulma input"
+<b-field label="$1">
+	<b-input v-model="$2" type="$3"></b-input>
+</b-field>
+endsnippet
+
+snippet rnc:b:button "Create a bulma button"
+<b-button>$1</b-field>
+endsnippet
+
+snippet rnc:b:icon-button "Create a bulma button"
+<b-button size="is-$1" icon-left="$2">
+	$3
+</b-button>
+endsnippet
