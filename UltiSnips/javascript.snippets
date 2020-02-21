@@ -300,3 +300,18 @@ endsnippet
 snippet rni:store:module "Import Store module"
 import $1 from './stores/$1'
 endsnippet
+
+snippet rnc:debounced:watch "Debounced watch propertie" b
+$1: _.debounce(function ($2) {
+}, $3)
+endsnippet
+
+snippet rnc:debounced:store:computed "Debounced computed propertie" b
+$1: {
+	get () {
+		return this.$store.getters.$2
+	},
+	set: _.debounce(function ($3) {
+	}, $4)
+},
+endsnippet
