@@ -35,6 +35,13 @@ snippet rnd:relation "Relationship documentation" b
  */ 
 endsnippet
 
+snippet rn:relation:hasOne "HasOne Relationship" b
+public function $1()
+{
+	return $this->hasOne($2::class);
+}
+endsnippet
+
 snippet rn:relation:hasMany "HasMany Relationship" b
 public function $1()
 {
