@@ -1,6 +1,6 @@
 extends html, javascript, css, scss
 
-snippet rnc:page "Create page" b
+snippet rnv:c:page "Create page" b
 <template>
 	<main class="$0" id="$1">
 
@@ -14,7 +14,7 @@ export default {
 </script>
 endsnippet
 
-snippet rnc:component "Create Component base" b
+snippet rnv:c:component "Create Component base" b
 <template>
 	<div class="$0" id="$1">
 	</div>
@@ -27,17 +27,17 @@ export default {
 </script>
 endsnippet
 
-snippet rnc:router:view "Create Router view"
+snippet rnv:c:router:view "Create Router view"
 <transition name="fade" mode="out-in">
 	<router-view/>
 </transition>
 endsnippet
 
-snippet rnc:router:link "Create Router Link"
+snippet rnv:c:router:link "Create Router Link"
 <router-link :to="{ name: '$1', query: { $2 }, params: { $3 } }" tag="${4:a}">$5</router-link>
 endsnippet
 
-snippet rnc:b:table "Create a bulma table"
+snippet rnv:c:b:table "Create a bulma table"
 	<b-table
 		:data="$1"
 		:selected.sync="$1s"
@@ -71,17 +71,17 @@ snippet rnc:b:table "Create a bulma table"
 	}
 endsnippet
 
-snippet rnc:b:input "Create a bulma input"
+snippet rnv:c:b:input "Create a bulma input"
 <b-field label="$1">
 	<b-input v-model="$2" type="$3"></b-input>
 </b-field>
 endsnippet
 
-snippet rnc:b:button "Create a bulma button"
+snippet rnv:c:b:button "Create a bulma button"
 <b-button>$1</b-field>
 endsnippet
 
-snippet rnc:b:icon-button "Create a bulma button"
+snippet rnv:c:b:icon-button "Create a bulma button"
 <b-button size="is-$1" icon-left="$2">
 	$3
 </b-button>
