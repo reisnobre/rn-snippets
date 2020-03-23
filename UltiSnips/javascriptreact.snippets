@@ -1,0 +1,26 @@
+extends html, javascript, css, scss
+
+snippet rnr:c:page "Create page" b
+import React from 'react'
+
+export default () => {
+  return (
+    <main className='page' id='$1'>
+    </main>
+  )
+}
+endsnippet
+
+extends html, javascript, css, scss
+
+snippet rnr:c:component "Create a component" b
+import React from 'react'
+
+export default () => {
+  return (
+    <div id='$1'>
+			component content here
+    </div>
+  )
+}
+endsnippet
