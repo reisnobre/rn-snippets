@@ -315,3 +315,29 @@ $1: {
 	}, $4)
 },
 endsnippet
+
+snippet rnr:c:reducer "Create a reducer" b
+import { $1 } from '../actions/types'
+
+const initalState = {
+}
+export default (state = initalState, action) => {
+  switch (action.type) {
+    case $1: return state
+    default: return state
+  }
+}
+endsnippet
+
+snippet rnr:c:actions "Create a action" b
+export function setApplicationConn ($2) {
+  return {
+    type: $1,
+    payload: $2
+  }
+}
+endsnippet
+
+
+
+
