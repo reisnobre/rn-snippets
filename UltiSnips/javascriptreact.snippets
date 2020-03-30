@@ -1,26 +1,63 @@
 extends html, javascript, css, scss
 
-snippet rnr:c:page "Create page" b
+snippet rnr:cc:page "Create class component that is a page" b
 import React from 'react'
 
-export default function $1 () {
+class $1 extends React.Component {
+	render () {
+		return (
+			<main className='page' id='$1'>
+				$2
+			</main>
+		)
+	}
+}
+
+export default $1
+endsnippet
+
+extends html, javascript, css, scss
+
+snippet rnr:cc:component "Create class component that is a component" b
+import React from 'react'
+
+class $1 extends React.Component {
+	render () {
+		return (
+			<div id='$1'>
+				$2
+			</div>
+		)
+	}
+}
+
+export default $1
+endsnippet
+
+snippet rnr:cf:page "Create functional component that is a page" b
+import React from 'react'
+
+const $1 = () => {
   return (
     <main className='page' id='$1'>
     </main>
   )
 }
+
+export default $1
 endsnippet
 
 extends html, javascript, css, scss
 
-snippet rnr:c:component "Create a component" b
+snippet rnr:cf:component "Create functional component that is a component" b
 import React from 'react'
 
-export default function $1 () {
+const $1 = () => {
   return (
     <div id='$1'>
 			component content here
     </div>
   )
 }
+export default $1
 endsnippet
