@@ -1,4 +1,13 @@
-extends vuex
+extends vuex, jsdocs
+
+snippet rn:import "Import a module" b
+import $1 from '$0'
+endsnippet
+
+snippet rn:decomposed-import "Import a docomposed module" b
+import { $1 } from '$0'
+endsnippet
+
 snippet rn:log "console.log(...)" b
 console.log($0)
 endsnippet
