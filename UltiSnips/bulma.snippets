@@ -1,0 +1,49 @@
+snippet rnv:c:b:table "Create a bulma table"
+	<b-table
+		:data="$1"
+		:selected.sync="$1s"
+		>
+		<template slot-scope="props">
+			<b-table-column field="slug" label="Nome">
+			</b-table-column>
+		</template>
+		<template slot="empty">
+			<section class="section">
+				<div class="content has-text-grey has-text-centered">
+					<p>
+					<b-icon
+						icon="sad-tear"
+						size="is-large">
+					</b-icon>
+					</p>
+					<p>Nothing here.</p>
+				</div>
+			</section>
+		</template>
+	</b-table>
+	<!-- MOVE THE CODE DOWN TO THE COMPUTED SECTION -->
+	$1: {
+		get () {
+			return this.$store.getters['$1Store/$1']
+		},
+		set ($1) {
+			this.$store.dispatch('$1Store/set$1Index', $1)
+		}
+	}
+endsnippet
+
+snippet rnv:c:b:input "Create a bulma input"
+<b-field label="$1">
+	<b-input v-model="$2" type="$3"></b-input>
+</b-field>
+endsnippet
+
+snippet rn:c:b:button "Create a bulma button"
+<b-button>$1</b-field>
+endsnippet
+
+snippet rnv:c:b:icon-button "Create a bulma button with icon"
+<b-button size="is-$0" icon-left="$1">
+	$2
+</b-button>
+endsnippet
