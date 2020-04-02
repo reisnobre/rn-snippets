@@ -19,17 +19,10 @@ setTimeout(() => {
 }, 300)
 endsnippet
 
-snippet :f "Object Method"
+snippet rnc:method "Method" b
 ${1:method_name}: function`!p snip.rv = ' ' `(${3:attribute}) {
 	${VISUAL}$0
 }${10:,}
-endsnippet
-
-snippet rnc:method "Method" b
-`!p
-`${1}: function(${2}) {
-	${0:${VISUAL}}
-},
 endsnippet
 
 snippet rnc:mvue "Main Vue File" b
