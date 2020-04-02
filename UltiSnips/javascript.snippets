@@ -20,9 +20,19 @@ setTimeout(() => {
 endsnippet
 
 snippet rnc:method "Method" b
-${1:method_name}: function`!p snip.rv = ' ' `(${3:attribute}) {
-	${VISUAL}$0
-}${10:,}
+`!p
+# Currently Ultisnips does not support dynamic tabstops, so we cannot add
+# tabstops to the datatype for these param tags until that feature is added.
+def formatTag(argument):
+	return " * @param {{}} {0}".format(argument)
+tags = [formatTag(argument.strip()) for argument in t[2].split(',') if argument]
+if tags:
+	snip.rv = "/**{0} */".format("".join(tags))
+else:
+	snip.rv = ''
+`${1}: function(${2}) {
+	${0:${VISUAL}}
+},
 endsnippet
 
 snippet rnc:mvue "Main Vue File" b
