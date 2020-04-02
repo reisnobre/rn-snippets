@@ -25,12 +25,18 @@ snippet rnc:method "Method" b
 # tabstops to the datatype for these param tags until that feature is added.
 def formatTag(argument):
 	return " * @param {{}} {0}".format(argument)
-tags = [formatTag(argument.strip()) for argument in t[2].split(',') if argument]
-if tags:
-	snip.rv = "/**{0} */".format("".join(tags))
+arguments = t[2].split(',')
+arguments = [argument.strip() for argument in arguments if argument]
+if len(arguments):
+	tags = map(formatTag, arguments)
+	snip.rv = "/**"
+	for tag in tags:
+		snip += tag
+	snip += ' */'
+	snip += ''
 else:
 	snip.rv = ''
-`${1}: function(${2}) {
+`${1} (${2}) {
 	${0:${VISUAL}}
 },
 endsnippet
