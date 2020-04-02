@@ -56,3 +56,15 @@ $1: {
 	type: $0
 }
 endsnippet
+
+snippet rnv:c:emit "Create a documented emit" b
+/**
+ * Triggers when the number changes
+ *
+ * @property {number} newValue new value set
+ * @property {number} oldValue value that was set before the change
+ */
+this.$emit('change', newValue, oldValue)
+endsnippet
+
+
