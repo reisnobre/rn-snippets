@@ -6,10 +6,9 @@ snippet rnc:method "Method" b
 # tabstops to the datatype for these param tags until that feature is added.
 # def formatTag(argument):
 # 	return " * @param {{}} {0}".format(argument)
-#
-# arguments = t[1].split(',')
+# #
+# arguments = t[2].split(',')
 # arguments = [argument.strip() for argument in arguments if argument]
-# snip.rv = 'test'
 #
 # if len(arguments):
 # 	tags = map(formatTag, arguments)
@@ -20,7 +19,7 @@ snippet rnc:method "Method" b
 # 	snip += ''
 # else:
 # 	snip.rv = ''
-# `
+`
 ${1} (${2}) {
 	${0:${VISUAL}}
 },
