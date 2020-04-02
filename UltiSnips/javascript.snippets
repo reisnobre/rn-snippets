@@ -4,22 +4,24 @@ snippet rnc:method "Method" b
 `!p
 # Currently Ultisnips does not support dynamic tabstops, so we cannot add
 # tabstops to the datatype for these param tags until that feature is added.
-def formatTag(argument):
-	return " * @param {{}} {0}".format(argument)
-
-arguments = t[1].split(',')
-arguments = [argument.strip() for argument in arguments if argument]
-
-if len(arguments):
-	tags = map(formatTag, arguments)
-	snip.rv = "/**"
-	for tag in tags:
-		snip += tag
-	snip += ' */'
-	snip += ''
-else:
-	snip.rv = ''
-`${1} (${2}) {
+# def formatTag(argument):
+# 	return " * @param {{}} {0}".format(argument)
+#
+# arguments = t[1].split(',')
+# arguments = [argument.strip() for argument in arguments if argument]
+# snip.rv = 'test'
+#
+# if len(arguments):
+# 	tags = map(formatTag, arguments)
+# 	snip.rv = "/**"
+# 	for tag in tags:
+# 		snip += tag
+# 	snip += ' */'
+# 	snip += ''
+# else:
+# 	snip.rv = ''
+# `
+${1} (${2}) {
 	${0:${VISUAL}}
 },
 endsnippet
