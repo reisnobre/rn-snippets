@@ -19,6 +19,12 @@ setTimeout(() => {
 }, 300)
 endsnippet
 
+snippet :f "Object Method"
+${1:method_name}: function`!p snip.rv = ' ' `(${3:attribute}) {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
 snippet rnc:method "Method" b
 `!p
 `${1}: function(${2}) {
