@@ -1,5 +1,6 @@
 /**
  * Description 
- *, 
- * @param {} myparam
+ *
+ * @param {} params
 */
+this.$emit(''params)
