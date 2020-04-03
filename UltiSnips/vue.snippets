@@ -1,12 +1,9 @@
 extends html, javascript, css, scss, bulma
 
 global !p
-def param(argument):
-	return " * @param {{}} {0}".format(argument)
-
-def function_name(name):
-	return name
-
+from jsdocs import (
+	param
+)
 endglobal
 
 snippet rnv:c:page "Create page" b
