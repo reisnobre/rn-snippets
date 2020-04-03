@@ -59,12 +59,16 @@ endsnippet
 
 snippet rnv:c:emit "Create a documented emit" b
 /**
- * Triggers when the number changes
- *
- * @property {number} newValue new value set
- * @property {number} oldValue value that was set before the change
- */
-this.$emit('change', newValue, oldValue)
+ * ${2:Description} 
+ *`!p
+arguments = [argument.strip()  for argument in t[2].split(',') if argument]
+if len(arguments):
+	snip.rv = ', '
+	tags = map(param, arguments)
+	for tag in tags:
+		snip += tag
+`*/
+this.$emit('${1}'${2:params})
 endsnippet
 
 
