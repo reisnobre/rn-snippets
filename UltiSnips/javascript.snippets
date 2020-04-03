@@ -1,9 +1,8 @@
 extends vuex, jsdocs
 
 global !p
-from jsdocs import (
-	param
-)
+def param(argument):
+	return " * @param {{}} {0}\n".format(argument)
 endglobal
 
 
