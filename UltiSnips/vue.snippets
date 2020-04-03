@@ -69,12 +69,11 @@ snippet rnv:c:emit "Create a documented emit" b
  *`!p
 arguments = [argument.strip()  for argument in t[2].split(',') if argument]
 if len(arguments):
-	snip.rv = ', '
 	tags = map(param, arguments)
 	for tag in tags:
 		snip += tag
 `*/
-this.$emit('${1}'${2:params})
+this.$emit('${1}'`!p ', ' if len(t)`${2:params})
 endsnippet
 
 
