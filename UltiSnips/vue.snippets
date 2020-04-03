@@ -1,5 +1,14 @@
 extends html, javascript, css, scss, bulma
 
+global !p
+def param(argument):
+	return " * @param {{}} {0}".format(argument)
+
+def function_name(name):
+	return name
+
+endglobal
+
 snippet rnv:c:page "Create page" b
 <template>
 	<main class="$0" id="$1">
