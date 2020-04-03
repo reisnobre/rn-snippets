@@ -13,7 +13,7 @@ endglobal
 snippet rnc:method "Method" b
 `!p
 
-arguments = [argument.strip()  for argumen in t[2].split(',') if argument]
+arguments = [argument.strip()  for argument in t[2].split(',') if argument]
 
 if len(arguments):
 	tags = map(param, arguments)
