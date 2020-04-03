@@ -2,24 +2,32 @@ extends vuex, jsdocs
 
 global !p
 def param(argument):
-	return " * @param {{}} {0}\n".format(argument)
+	return " * @param {{}} {0}".format(argument)
+
+def function_name(name):
+	return name
+
 endglobal
 
 
 snippet rnc:method "Method" b
 `!p
-arguments = t[2].split(',')
-arguments = [argument.strip() for argument in arguments if argument]
+
+arguments = [argument.strip()  for argumen in t[2].split(',') if argument]
+
+snip.rv = """
+/**
+* {t[1]}
+* Description
+*
+"""
 
 if len(arguments):
 	tags = map(param, arguments)
-	snip.rv = "/**"
 	for tag in tags:
 		snip += tag
-	snip += ' */'
-	snip += ''
-else:
-	snip.rv = ''
+
+snip += ' */'
 `
 ${1} (${2}) {
 	${0:${VISUAL}}
