@@ -11,27 +11,23 @@ endglobal
 
 
 snippet rnc:method "Method" b
+/**
+ * $1
+ *
+
 `!p
 
-arguments = [argument.strip()  for argument in t[2].split(',') if argument]
+arguments = [argument.strip()  for argument in t[3].split(',') if argument]
 
 if len(arguments):
 	tags = map(param, arguments)
-	snip.rv = "/**"
 	for tag in tags:
 		snip += tag
-	snip += '* @public'
-	snip += ' */'
-	snip += ''
-else:
-	snip.rv = ''
 `
-/**
-* $1
-*
-* ${2:Description}
-/*
-${1} (${2}) {
+ * ${2:Description}
+ * @public
+ */
+${1} (${3}) {
 	${0:${VISUAL}}
 },
 endsnippet
