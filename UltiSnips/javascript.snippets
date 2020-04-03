@@ -1,24 +1,26 @@
 extends vuex, jsdocs
 
+global !p
+from jsdocs import (
+	param
+)
+endglobal
+
+
 snippet rnc:method "Method" b
 `!p
-# Currently Ultisnips does not support dynamic tabstops, so we cannot add
-# tabstops to the datatype for these param tags until that feature is added.
-# def formatTag(argument):
-# 	return " * @param {{}} {0}".format(argument)
-# #
-# arguments = t[2].split(',')
-# arguments = [argument.strip() for argument in arguments if argument]
-#
-# if len(arguments):
-# 	tags = map(formatTag, arguments)
-# 	snip.rv = "/**"
-# 	for tag in tags:
-# 		snip += tag
-# 	snip += ' */'
-# 	snip += ''
-# else:
-# 	snip.rv = ''
+arguments = t[2].split(',')
+arguments = [argument.strip() for argument in arguments if argument]
+
+if len(arguments):
+	tags = map(param, arguments)
+	snip.rv = "/**"
+	for tag in tags:
+		snip += tag
+	snip += ' */'
+	snip += ''
+else:
+	snip.rv = ''
 `
 ${1} (${2}) {
 	${0:${VISUAL}}
@@ -70,7 +72,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-import $0 from `!p snip.rv = t[0].lower()`
+import ${1} from `!p snip.rv = t[1].lower()`
 
 export default new Router({
 	mode: 'history',
@@ -78,8 +80,8 @@ export default new Router({
   routes: [
     {
       path: '',
-      name: '`!p snip.rv = t[0].lower()`',
-      component: $0
+      name: '`!p snip.rv = t[1].lower()`',
+      component: ${0}
     }
   ]
 })
