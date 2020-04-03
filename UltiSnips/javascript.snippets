@@ -14,17 +14,14 @@ snippet rnc:method "Method" b
 /**
  * $1
  *
-
+ * ${2:Description}
 `!p
-
 arguments = [argument.strip()  for argument in t[3].split(',') if argument]
-
 if len(arguments):
 	tags = map(param, arguments)
 	for tag in tags:
 		snip += tag
 `
- * ${2:Description}
  * @public
  */
 ${1} (${3}) {
