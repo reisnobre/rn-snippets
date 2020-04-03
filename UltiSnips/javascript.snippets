@@ -15,20 +15,22 @@ snippet rnc:method "Method" b
 
 arguments = [argument.strip()  for argumen in t[2].split(',') if argument]
 
-snip.rv = """
-/**
-* {t[1]}
-* Description
-*
-"""
-
 if len(arguments):
 	tags = map(param, arguments)
+	snip.rv = "/**"
 	for tag in tags:
 		snip += tag
-
-snip += ' */'
+	snip += '* @public'
+	snip += ' */'
+	snip += ''
+else:
+	snip.rv = ''
 `
+/**
+* $1
+*
+* ${2:Description}
+/*
 ${1} (${2}) {
 	${0:${VISUAL}}
 },
