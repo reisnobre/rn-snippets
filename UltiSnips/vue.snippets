@@ -8,7 +8,7 @@ endglobal
 
 snippet rnv:c:page "Create page" b
 <template>
-	<main class="$0" id="$1">
+	<main class="$0" id="${1}">
 
 	</main>
 </template>
@@ -16,7 +16,7 @@ snippet rnv:c:page "Create page" b
 <script>
 /**
  * Description
- * @displayName $2
+ * @displayName `!p snip.rv = t[1].split('-').join(' ')` 
  */
 export default {
   name: '$1'
