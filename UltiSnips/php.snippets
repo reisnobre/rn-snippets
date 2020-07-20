@@ -59,7 +59,11 @@ endsnippet
 snippet rn:sw:post:public-method "Laravel Method using Swagger documentation" b
 /**
  *	$1`
+<<<<<<< HEAD
 arguments = [argument.strip()  for argument in t[2].split(',') if argument]
+=======
+arguments = [argument.strip()  for argument in t[3].split(',') if argument]
+>>>>>>> 8c2e2af9da01cd9cf30b17fba409c13533abc245
 if len(arguments):
 	tags = map(param, arguments)
 	for tag in tags:
@@ -120,5 +124,4 @@ public function ${1:Function Name}(${2:params})
 {
 	${6}
 }
-
 endsnippet
