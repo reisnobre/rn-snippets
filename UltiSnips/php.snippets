@@ -56,4 +56,69 @@ public function $1()
 }
 endsnippet
 
+snippet rn:sw:post:public-method "Laravel Method using Swagger documentation" b
+/**
+ *	$1`
+arguments = [argument.strip()  for argument in t[3].split(',') if argument]
+if len(arguments):
+	tags = map(param, arguments)
+	for tag in tags:
+		snip += tag
+`
+ * 	@return ${4:Return} 
+ *
+ *	@OA\Post(
+ * 		path="/api/v1/${5}",
+ *     	operationId="login",
+ *     	tags={"User authentication"},
+ *     	summary="Login",
+ *     	description="",
+ *     	@OA\Parameter(
+ *      	name="email",
+ *         	in="query",
+ *         	required=true,
+ *         	@OA\Schema(type="string")
+ *     	),
+ *     	@OA\Response(
+ *       	response=200,
+ *         	description="Successful operation",
+ *         	x={
+ *          	"X__test__Cases": {
+ *              	{
+ *                  	"schemaRequest":"AuthLoginRequest",
+ *                     	"schemaResponse":"AuthLogin",
+ *                     	"authToken":"authSupplier1",
+ *                     	"description":"Login - Test a client login",
+ *                 	}
+ *             	}
+ *         	}
+ *     	),
+ *     	@OA\Response(
+ *      	response=422,
+ *         	description="Unprocessable entity"
+ *     	),
+ *     	@OA\Response(
+ *         	response=404,
+ *          description="Not Found",
+ *          x={
+ *             	"testCases": {
+ *              	{
+ *                  	"schemaRequest":"AuthLoginRequest",
+ *                      "schemaResponse":"AuthLogin",
+ *                      "description":"Login - Test a failed client login",
+ *                      "parametersRequest": {
+ *                      	"email":"test_user+test_client_that_must_fail@randomdomain.com",
+ *                          "password":"incorrect-password-123",
+ *                      }
+ *                  }
+ *              }
+ *      	},
+ *  	),
+ * 	)
+ */
+public function ${1:Function Name}(${2:params})
+{
+}
+
+endsnippet
 
