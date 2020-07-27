@@ -59,11 +59,7 @@ endsnippet
 snippet rn:sw:post:public-method "Laravel Method using Swagger documentation" b
 /**
  *	$1`
-<<<<<<< HEAD
 arguments = [argument.strip()  for argument in t[2].split(',') if argument]
-=======
-arguments = [argument.strip()  for argument in t[3].split(',') if argument]
->>>>>>> 8c2e2af9da01cd9cf30b17fba409c13533abc245
 if len(arguments):
 	tags = map(param, arguments)
 	for tag in tags:
@@ -124,4 +120,37 @@ public function ${1:Function Name}(${2:params})
 {
 	${6}
 }
+endsnippet
+
+snippet rn:sw:method "Swagger documentation for a php method" b
+<?php
+
+namespace App\Models\Swagger\\${1:path};
+
+/**
+ * @OA\Schema(schema="${2:schema_name}")
+ */
+class ${3:name}
+{
+	${4}
+}
+
+endsnippet
+
+snippet rn:sw:var "An documented swagger variable, to be used as documentation" b
+/**
+ * ${1:Name}
+ * @OA\Property(type="${3:var_type}")
+ * @var $3 
+ */
+public ${2:var_name};
+endsnippet
+
+snippet rn:sw:var-with-format "An documented swagger variable with format, to be used as documentation" b
+/**
+ * ${1:Name}
+ * @OA\Property(type="${3:var_type}", format="${4:format}")
+ * @var $3 
+ */
+public ${2:var_name};
 endsnippet
